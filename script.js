@@ -5,17 +5,18 @@ function getComputerChoice() {
     const rand = Math.floor(Math.random() * compChoice.length)
 
     // Computer random choice
-    const compRanChoi = compChoice[rand]
-    return compRanChoi
+    return compChoice[rand]
 }
+
+// Getting data from the HTML
+const rockButton = document.querySelector(".rock")
+const paperButton = document.querySelector(".paper")
+const scissorsButton = document.querySelector(".scissors")
+
+
+
+// Start the game
 const computerSelection = getComputerChoice()
-console.log(computerSelection)
+// const playerSelection = 
 
-const rockChoice = document.querySelector(".rock");
-rockChoice.addEventListener("click", myFunction);
-const paperChoice = document.querySelector("paper")
-const scissorsChoice = document.querySelector("scissors")
-
-function myFunction() {
-    console.log("hi")
-}
+// console.log(playRound(playerSelection, computerSelection))

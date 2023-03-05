@@ -56,6 +56,17 @@ button {
     overflow: hidden;
     outline: none;
 }
+
+.result-board {
+    display: flex;
+    justify-content: center;
+}
+
+.result-text {
+    font-size: large;
+    font-weight: 800;
+}
+
 .footer {
     color: white;
     background-color: rgb(9, 16, 53);
