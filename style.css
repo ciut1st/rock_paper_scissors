@@ -1,0 +1,64 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: bisque;
+}
+
+.header {
+    color: white;
+    background-color: rgb(9, 16, 53);
+    display: flex;
+    justify-content: center;
+}
+
+/*.board {
+    
+}*/
+
+.score-board {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px;
+}
+
+.player-board, .round-board, .computer-board {
+    font-size: 25px;
+}
+
+p.player-score, .round, .computer-score {
+    font-weight: 800;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+}
+
+/*.game {
+
+}*/
+
+.game-display {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 16px;
+}
+
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+.footer {
+    color: white;
+    background-color: rgb(9, 16, 53);
+    display: flex;
+    justify-content: center;
+}
