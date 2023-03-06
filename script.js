@@ -8,12 +8,17 @@ function getComputerChoice() {
     return compChoice[rand]
 }
 
-let computerSelection = getComputerChoice()
+
 
 // Getting data from the HTML
-const rockButton = document.querySelector(".rock")
-const paperButton = document.querySelector(".paper")
-const scissorsButton = document.querySelector(".scissors")
+const buttons = document.querySelectorAll('button')
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        let playerSelection = button.value
+        let computerSelection = getComputerChoice()
+        console.log(playRound(playerSelection, computerSelection))
+    })
+})
 
 
 function playRound(playerSelection, computerSelection) {
@@ -30,6 +35,3 @@ function playRound(playerSelection, computerSelection) {
             return "Draw"
             }
 }
-console.log(computerSelection)
-const playerSelection = "rock"
-console.log(playRound(playerSelection, computerSelection))
