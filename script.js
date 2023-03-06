@@ -1,37 +1,54 @@
-// Section for Computer choices
 function getComputerChoice() {
-    // Making computer be able to choose random choice
     const compChoice = ["rock", "paper", "scissors"]
     const rand = Math.floor(Math.random() * compChoice.length)
-
-    // Computer random choice
     return compChoice[rand]
 }
 
 
 
-// Getting data from the HTML
 const buttons = document.querySelectorAll('button')
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         let playerSelection = button.value
         let computerSelection = getComputerChoice()
-        console.log(playRound(playerSelection, computerSelection))
+        playRound(playerSelection, computerSelection)
     })
 })
 
+let playerScore = 0
+let computerScore = 0
+let round = 0
+
+const result = document.querySelector('.result')
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection == "scissors"
     || playerSelection == "paper" && computerSelection == "rock"
     || playerSelection == "scissors" && computerSelection == "paper") {
-        return "Win"
+        return playerWin()
     } else if (
         playerSelection == "rock" && computerSelection == "paper"
         || playerSelection == "paper" && computerSelection == "scissors"
         || playerSelection == "scissors" && computerSelection == "rock") {
-            return "Lose"
+            return computerWin()
         } else {
-            return "Draw"
+            return draw()
             }
+}
+
+function playerWin() {
+    result.innerHTML = "You win"
+    document.querySelector("#player-score-number").innerHTML = playerScore++
+    document.querySelector("#round-number").innerHTML = round++
+}
+
+function computerWin() {
+    result.innerHTML = "You lose"
+    document.querySelector("#computer-score-number").innerHTML = computerScore++
+    document.querySelector("#round-number").innerHTML = round++
+}
+
+function draw() {
+    result.innerHTML = "It's a draw"
+    document.querySelector("#round-number").innerHTML = round++
 }
