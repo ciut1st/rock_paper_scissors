@@ -12,6 +12,7 @@ buttons.forEach(button => {
         playRound(playerSelection, computerSelection)
     })
 })
+
 let playerScore = 0
 let computerScore = 0
 let round = 0
@@ -22,17 +23,17 @@ function playRound(playerSelection, computerSelection) {
     || playerSelection == "scissors" && computerSelection == "paper") {
         playerScore++
         round++
-        return playerWin()
+        playerWin()
     } else if (
         playerSelection == "rock" && computerSelection == "paper"
         || playerSelection == "paper" && computerSelection == "scissors"
         || playerSelection == "scissors" && computerSelection == "rock") {
             computerScore++
             round++
-            return computerWin()
+            computerWin()
         } else {
             round++
-            return draw()
+            draw()
             }
 }
 
